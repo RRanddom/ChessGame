@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ChessGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6J-me-2Ag" customClass="ChessView" customModule="ChessGame" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="90" width="320" height="320"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="e6J-me-2Ag" secondAttribute="height" multiplier="1:1" id="787-7Z-l08"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score :300" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PA1-0E-5RI">
+                                <rect key="frame" x="100" y="40" width="120" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2vr-lV-QfF"/>
+                                    <constraint firstAttribute="width" constant="120" id="7DQ-qD-G8m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" red="0.38032080099999999" green="0.77212213009999997" blue="0.54980140499999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jB-OU-Wb6">
+                                <rect key="frame" x="130" y="464" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="pRh-oH-jiQ"/>
+                                    <constraint firstAttribute="height" constant="60" id="whT-9M-ysX"/>
+                                </constraints>
+                                <state key="normal" image="restart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="gameRestart" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wXI-G9-Qi4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e6J-me-2Ag" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="HAz-dm-iWA"/>
+                            <constraint firstItem="PA1-0E-5RI" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="IK8-IK-hzn"/>
+                            <constraint firstItem="e6J-me-2Ag" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="70" id="W9t-c8-ZMJ"/>
+                            <constraint firstAttribute="centerX" secondItem="6jB-OU-Wb6" secondAttribute="centerX" id="b9k-rF-ouu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e6J-me-2Ag" secondAttribute="trailing" constant="-16" id="hFe-Ec-D74"/>
+                            <constraint firstAttribute="centerX" secondItem="PA1-0E-5RI" secondAttribute="centerX" id="qSA-Da-ZHz"/>
+                            <constraint firstItem="6jB-OU-Wb6" firstAttribute="top" secondItem="e6J-me-2Ag" secondAttribute="bottom" constant="54" id="y1g-WR-qzZ"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="chessView" destination="e6J-me-2Ag" id="vXW-xe-ijf"/>
+                        <outlet property="scoreLabel" destination="PA1-0E-5RI" id="hUP-9H-vDf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="restart" width="80" height="80"/>
+    </resources>
+</document>
